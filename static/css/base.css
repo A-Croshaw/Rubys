@@ -1,0 +1,32 @@
+
+:root{
+
+    /* Colours */
+    --banners: #000000;
+    --banner-txt: #ffffff;
+    --nav-txt: #000000;
+    --nav-hover: #ff0000;
+}
+
+/* header */
+
+.nav-txt{
+    color: var(--nav-txt);
+}
+
+.nav-txt:hover{
+    color: var(--nav-hover);
+}
+
+.nav-btn{
+    background-color: #ffffff;
+}
+
+.nav-btn:hover{
+    background-color: var(--nav-hover);
+}
+
+.delivery-banner{
+    background-color: var(--banners);
+    color: var(--banner-txt);
+}

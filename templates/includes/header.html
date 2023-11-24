@@ -1,0 +1,66 @@
+{% load static %}
+<header class="container-fluid sticky-md-top">
+    <div id="topnav" class="row pt-md-2 d-none d-md-flex">
+        <div class="col-12 col-md-4 my-auto py-1 py-md-0 text-center text-md-left">
+            <a href="{% url 'home' %}" class="nav-link nav-txt">
+                <h2 class="my-0"><strong>Ruby's</strong></h2>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 my-auto py-1 py-md-0">
+            <form method="GET" action="">
+                <div class="input-group w-100">
+                    <input class="form-control border " type="text" name="q"
+                        placeholder="Search our site">
+                    <div>
+                        <button class="form-control btn nav-txt" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-4 my-auto py-1 py-md-0 ">
+            <ul class="list-inline list-unstyled text-center text-md-right my-0">
+                <li class="list-inline-item dropdown">
+                    <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center nav-txt">
+                            <div><i class="fas fa-user fa-lg"></i></div>
+                            <p class="my-0">My Account</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0 " aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item"></a>
+                        {% endif %}
+                        <a href="" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link"
+                        href="">
+                        <div class="text-center nav-txt">
+                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <p class="my-0">
+                                $0.00
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col delivery-banner">
+            <h4 class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+        </div>            
+    </div>
+</header>
