@@ -1,6 +1,6 @@
 {% load static %}
-<header class="container-fluid sticky-md-top">
-    <div id="topnav" class="row pt-md-2 d-none d-md-flex">
+<header class="container-fluid sticky-md-top ps-0 ">
+    <div id="topnav" class="row pt-md-2 d-none d-md-flex m-1 p-1">
         <div class="col-12 col-md-4 my-auto py-1 py-md-0 text-center text-md-left">
             <a href="{% url 'home' %}" class="nav-link nav-txt">
                 <h2 class="my-0"><strong>Ruby's</strong></h2>
@@ -62,5 +62,15 @@
         <div class="col delivery-banner">
             <h4 class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
         </div>            
+    </div>
+    <div class=" col-md-2 bg-dark fixed-left me-2 p-2">
+        <div class="row justify-content-center p-0 m-0">
+            <div class="col-6 d-flex justify-content-start p-0 m-0">
+                {% include 'includes/main-nav.html' %}
+            </div>
+            <div class="col-6 d-flex justify-content-end ">
+                {% include 'includes/mobile-top-header.html' %}
+            </div>
+        </div>
     </div>
 </header>

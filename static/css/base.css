@@ -1,4 +1,7 @@
-
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
 :root{
 
     /* Colours */
@@ -29,4 +32,18 @@
 .delivery-banner{
     background-color: var(--banners);
     color: var(--banner-txt);
+}
+
+.card{
+    display: flex;
+    gap: 1;
+    min-width: 150px;
+    height: 150px;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    width: 97%;
 }
