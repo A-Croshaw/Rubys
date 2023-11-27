@@ -1,19 +1,18 @@
 {% load static %}
-<header class="container-fluid sticky-md-top ps-0 ">
-    <div id="topnav" class="row pt-md-2 d-none d-md-flex m-1 p-1">
-        <div class="col-12 col-md-4 my-auto py-1 py-md-0 text-center text-md-left">
-            <a href="{% url 'home' %}" class="nav-link nav-txt">
-                <h2 class="my-0"><strong>Ruby's</strong></h2>
+<header class="container-fluid sticky-top">
+    <div id="topnav" class="row d-none d-md-flex nav-bg ">
+        <div class="col-12 col-md-4 py-1">
+            <a href="{% url 'home' %}" class="nav-link p-0 nav-txt">
+                <h1 class="logo">Ruby's</h1>
             </a>
         </div>
-        <div class="col-12 col-md-4 my-auto py-1 py-md-0">
+        <div class="col-12 col-md-4 mt-1 pt-1">
             <form method="GET" action="">
-                <div class="input-group w-100">
-                    <input class="form-control border " type="text" name="q"
-                        placeholder="Search our site">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" placeholder="Search our site">
                     <div>
-                        <button class="form-control btn nav-txt" type="submit">
-                            <span class="icon">
+                        <button class="btn nav-txt" type="submit">
+                            <span>
                                 <i class="fas fa-search"></i>
                             </span>
                         </button>
@@ -21,34 +20,23 @@
                 </div>
             </form>
         </div>
-        <div class="col-12 col-md-4 my-auto py-1 py-md-0 ">
-            <ul class="list-inline list-unstyled text-center text-md-right my-0">
+        <div class="col-12 col-md-4 d-md-flex justify-content-end pt-1">
+            <ul class="list-inline list-unstyled my-0 d-md-flex gap-md-4">
                 <li class="list-inline-item dropdown">
-                    <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" id="account-options" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <div class="text-center nav-txt">
-                            <div><i class="fas fa-user fa-lg"></i></div>
-                            <p class="my-0">My Account</p>
+                            <div><i class="fas fa-user fa-md"></i></div>
+                            <p class="my-0 ">My Account</p>
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0 " aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item"></a>
-                        {% endif %}
-                        <a href="" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                        {% endif %}
+                    <div class="dropdown-menu border-0 " aria-labelledby="account-options">
                     </div>
                 </li>
                 <li class="list-inline-item">
-                    <a class="nav-link"
-                        href="">
+                    <a class="nav-link" href="">
                         <div class="text-center nav-txt">
-                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <div><i class="fas fa-shopping-bag fa-md"></i></div>
                             <p class="my-0">
                                 $0.00
                             </p>
@@ -58,19 +46,25 @@
             </ul>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col delivery-banner">
-            <h4 class="my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
-        </div>            
+    <div class="row delivery-banner w-110 my-0">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            <h4 class="m-0 p-1">Free delivery on orders over €15
+                Free delivery on orders over €15
+                Free delivery on orders over €15
+                Free delivery on orders over €15
+                Free delivery on orders over €15
+                Free delivery on orders over €15
+                Free delivery on orders over €15 </h4>
+        </marquee>
     </div>
-    <div class=" col-md-2 sticky-left me-2 p-2">
-        <div class="row justify-content-center p-0 m-0">
-            <div class="col-6 d-flex justify-content-start p-0 m-0">
-                {% include 'includes/main-nav.html' %}
-            </div>
-            <div class="col-6 d-flex justify-content-end ">
-                {% include 'includes/mobile-top-header.html' %}
-            </div>
-        </div>
+    <div class="row nav-bg ps-2 my-0">
+        <nav class="navbar navbar-expand-md my-0">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+                aria-controls="navbarOffcanvasLg">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% include 'includes/mobile-top-header.html' %}
+            {% include 'includes/main-nav.html' %}
+        </nav>
     </div>
 </header>

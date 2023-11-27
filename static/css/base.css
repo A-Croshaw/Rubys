@@ -1,20 +1,35 @@
-body{
-    display: flex;
-    flex-wrap: wrap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Yatra+One&family=Zilla+Slab&display=swap');
 :root{
+
+    /* Fonts */
+    --logo:'Shadows Into Light', serif;
+    --nav: 'Zilla Slab', serif;
+    --delivery: 'Yatra One', serif;
 
     /* Colours */
     --banners: #000000;
     --banner-txt: #ffffff;
     --nav-txt: #000000;
     --nav-hover: #ff0000;
+    --nav-bar: #777777;
 }
 
 /* header */
 
+.logo {
+    font-family: var(--logo);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.nav-bg{
+    background-color: var(--nav-bar);
+}
+
 .nav-txt{
     color: var(--nav-txt);
+    font-family: var(--nav);
+    font-size: 1.15rem;
 }
 
 .nav-txt:hover{
@@ -32,17 +47,15 @@ body{
 .delivery-banner{
     background-color: var(--banners);
     color: var(--banner-txt);
+    font-family: var(--delivery);
+    font-size: 1rem;
 }
+
+/* Generic */
+
 
 .card{
     min-width: 150px;
     max-width: 150px;
     height: 150px;
-}
-
-main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
-
 }

@@ -39,9 +39,23 @@
 <body>
     {% include 'includes/header.html' %}
 
-    <main class="col-md-12 mt-0">
-        <div class="col-md-10 p-3 me-5">
-            <div class="row gap-3 d-flex justify-content-center">
+    <main>
+        <div class="container-fluid d-block d-md-none">
+                <form method="GET" action="">
+                    <div class="input-group">
+                        <input class="form-control border " type="text" name="q" placeholder="Search Books">
+                        <div>
+                            <button class="form-control btn nav-txt" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+        <div class="container-fluid">
+            <div class=" content row gap-3 d-flex justify-content-center">
                 <div class="col d-flex justify-content-center bg-primary card">
                     <p>a</p>
                 </div>

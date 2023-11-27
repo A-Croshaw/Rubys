@@ -1,55 +1,62 @@
-
-<nav class="navbar navbar-expand-md ">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 flex-md-column">
-                <li class="nav-item d-block d-md-none p-0 m-0">
-                    <a class="nav-link nav-txt p-0 m-0" href="{% url 'home' %}" id="home-link">
-                        Home
-                    </a>
-                </li>
-                <li class="nav-item dropdown p-0 m-0">
-                    <a class="nav-link nav-txt p-0 m-0" href="#" id="all-books-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        All Books
-                    </a>
-                    <div class="dropdown-menu p-0 m-0" aria-labelledby="all-books-link">
-                        
-                    </div>
-                </li>
-        
-                <li class="nav-item dropdown p-0 m-0">
-                    <a class=" nav-link nav-txt p-0 m-0" href="#" id="childrens-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Childrens
-                    </a>
-                    <div class="dropdown-menu p-0 m-0" aria-labelledby="childrens-link">
-                    </div>
-                </li>
-        
-                <li class="nav-item dropdown p-0 m-0">
-                    <a class=" nav-link nav-txt p-0 m-0" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Adult
-                    </a>
-                    <div class="dropdown-menu p-0 m-0" aria-labelledby="adult-link">
-        
-                    </div>
-                </li>
-        
-                <li class="nav-item dropdown p-0 m-0">
-                    <a class="nav-link nav-txt p-0 m-0" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        About Us
-                    </a>
-                    <div class="dropdown-menu p-0 m-0" aria-labelledby="about-link">
-        
-                    </div>
-                </li>
-            </ul>
-          </div>
+<div class="offcanvas offcanvas-start w-25 py-0 my-0 py-0" tabindex="-1" id="navbarOffcanvasLg"
+    aria-labelledby="navbarOffcanvasLgLabel">
+    <div class="offcanvas-header">
+        <h1 class="logo">Ruby's</h1>
+        </h5>
     </div>
-  </nav>
+    <div class="offcanvas-body py-0 my-0 py-0">
+        <ul class="navbar-nav justify-content-evenly flex-grow-1 my-0 py-0">
+            <li class="nav-item d-block d-md-none my-0 py-0">
+                <a class="nav-link nav-txt my-0 py-0" href="{% url 'home' %}" id="home-link">
+                    Home
+                </a>
+            </li>
+            <li class="nav-item dropdown my-0 py-0">
+                <a class="nav-link nav-txt my-0 py-0" href="#" id="all-books-link" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    All Books
+                </a>
+                <div class="dropdown-menu" aria-labelledby="all-books-link">
+
+                </div>
+            </li>
+
+            <li class="nav-item dropdown my-0 py-0">
+                <a class=" nav-link nav-txt my-0 py-0" href="#" id="childrens-link" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Childrens
+                </a>
+                <div class="dropdown-menu" aria-labelledby="childrens-link">
+                </div>
+            </li>
+
+            <li class="nav-item dropdown my-0 py-0">
+                <a class=" nav-link nav-txt my-0 py-0" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Adult
+                </a>
+                <div class="dropdown-menu" aria-labelledby="adult-link">
+
+                </div>
+            </li>
+
+            <li class="nav-item dropdown my-0 py-0">
+                <a class="nav-link nav-txt my-0 py-0" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    About Us
+                </a>
+                <div class="dropdown-menu" aria-labelledby="about-link">
+
+                </div>
+            </li>
+            <li class="nav-item dropdown d-block d-md-none my-0 py-0">
+                <a class="nav-link nav-txt my-0 py-0" href="#" id="account-options" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    My Account
+                </a>
+                <div class="dropdown-menu border-0 " aria-labelledby="account-options">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
