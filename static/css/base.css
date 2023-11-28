@@ -51,6 +51,25 @@
     font-size: 1rem;
 }
 
+/* footer */
+
+footer{
+    flex-shrink: 0;
+    background-color: var(--nav-bar);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 2.5rem;
+}
+
+footer a{
+    padding-top: 10px;
+}
+
+footer a:hover{
+    background-color: var(--nav-hover);
+
+}
 /* Generic */
 
 
