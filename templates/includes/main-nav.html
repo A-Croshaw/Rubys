@@ -50,12 +50,18 @@
                 </div>
             </li>
             <li class="nav-item dropdown d-block d-md-none my-0 py-0">
-                <a class="nav-link nav-txt my-0 py-0" href="#" id="account-options" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link nav-txt my-0 py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     My Account
                 </a>
-                <div class="dropdown-menu border-0 " aria-labelledby="account-options">
-                </div>
+                <ul class="dropdown-menu border-0 my-0 py-0">
+                    {% if request.user.is_authenticated %}
+                    <li><a href="" class="dropdown-item">My Profile</a></li>
+                    <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                    {% endif %}
+                </ul>
             </li>
         </ul>
     </div>

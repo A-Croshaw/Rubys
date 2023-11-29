@@ -51,7 +51,15 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'fontawesome',
+
+    #Apps
     'home',
+
+    #Others
+    "crispy_forms",
+    "crispy_bootstrap5",
+
+   
 ]
 
 SITE_ID = 1
@@ -68,6 +76,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'rubys.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 TEMPLATES = [
     {

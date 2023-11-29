@@ -5,6 +5,7 @@
     --logo:'Shadows Into Light', serif;
     --nav: 'Zilla Slab', serif;
     --delivery: 'Yatra One', serif;
+    --account-txt:'Zilla Slab', serif, arial;
 
     /* Colours */
     --banners: #000000;
@@ -12,6 +13,13 @@
     --nav-txt: #000000;
     --nav-hover: #ff0000;
     --nav-bar: #777777;
+    --account-btn-txt: #000000;
+    --login-txt: #000000;
+    --login-bg: #ffffffc2;
+}
+body{
+    background: url(../images/background-image.webp) no-repeat center;
+    background-attachment:fixed;
 }
 
 /* header */
@@ -54,7 +62,6 @@
 /* footer */
 
 footer{
-    flex-shrink: 0;
     background-color: var(--nav-bar);
     display: flex;
     flex-direction: row;
@@ -68,7 +75,56 @@ footer a{
 
 footer a:hover{
     background-color: var(--nav-hover);
+}
 
+/* Account Logins */
+
+.login-bg-fade{
+    background-color: var(--login-bg);
+}
+
+.account-login{
+    font-family: var(--logo);
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.login, .sign-up{
+    background-color: var(--login-bg);
+}
+
+.login-txt, .login{
+    font-size: 1.2rem;
+}
+
+.sign-up{
+    font-size: 1rem;
+}
+
+.login-txt, .login, .sign-up{
+    font-family: var(--account-txt);
+    color: var(--login-txt);
+    
+}
+
+.btn-account, .btn-sign-up:hover{
+    border: #ff0000 ridge 3px ;
+    font-family: var(--account-txt);
+    font-weight: 600;
+    font-size: 1.15rem;
+    background-color: #8f8888;
+    color: var(--account-btn-txt);
+
+}
+
+.btn-sign-up, .btn-account:hover{
+    border: #001aff ridge 3px ;
+    font-family: var(--account-txt);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--account-btn-txt);
+    background-color: #8f8888;
+    text-decoration: none;
 }
 /* Generic */
 
@@ -77,4 +133,19 @@ footer a:hover{
     min-width: 150px;
     max-width: 150px;
     height: 150px;
+}
+
+@media (min-width: 600px) {
+    .login{
+        width: 400px;
+    }
+    .email-Verify{
+        width: 600px;
+    }
+}
+
+@media (min-width: 800px) {
+    .sign-up{
+        width:600px;
+    }
 }

@@ -5,8 +5,20 @@
     {% block extra_head %}
     {% endblock %}
   </head>
-  <body>
+  <body class="login-background">
     {% block body %}
+
+    {% if messages %}
+    <div>
+      <strong>Messages:</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    
     <div>
       <strong>Menu:</strong>
       <ul>

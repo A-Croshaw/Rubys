@@ -23,15 +23,21 @@
         <div class="col-12 col-md-4 d-md-flex justify-content-end pt-1">
             <ul class="list-inline list-unstyled my-0 d-md-flex gap-md-4">
                 <li class="list-inline-item dropdown">
-                    <a class="nav-link" href="#" id="account-options" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link nav-txt" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="text-center nav-txt">
                             <div><i class="fas fa-user fa-md"></i></div>
-                            <p class="my-0 ">My Account</p>
+                            <p class="my-0">My Account</p>
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0 " aria-labelledby="account-options">
-                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        {% if request.user.is_authenticated %}
+                        <li><a href="" class="dropdown-item nav-txt">My Profile</a></li>
+                        <li><a href="{% url 'account_logout' %}" class="dropdown-item nav-txt">Logout</a></li>
+                        {% else %}
+                        <li><a href="{% url 'account_signup' %}" class="dropdown-item nav-txt">Register</a></li>
+                        <li><a href="{% url 'account_login' %}" class="dropdown-item nav-txt">Login</a></li>
+                        {% endif %}
+                    </ul>
                 </li>
                 <li class="list-inline-item">
                     <a class="nav-link" href="">
