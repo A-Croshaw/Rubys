@@ -15,8 +15,9 @@
     --nav-bar: #777777;
     --account-btn-txt: #000000;
     --login-txt: #000000;
-    --login-bg: #ffffffc2;
+    --bg-fade: #ffffffc2;
 }
+
 body{
     background: url(../images/background-image.webp) no-repeat center;
     background-attachment:fixed;
@@ -79,8 +80,8 @@ footer a:hover{
 
 /* Account Logins */
 
-.login-bg-fade{
-    background-color: var(--login-bg);
+.bg-fade{
+    background-color: var(--bg-fade);
 }
 
 .account-login{
@@ -128,18 +129,29 @@ footer a:hover{
 }
 /* Generic */
 
+.headers{
+    font-family: var(--logo), sans-serif, Arial;
+    font-weight: 600;
+    font-size: 3rem;
+}
 
 .card{
     min-width: 150px;
     max-width: 150px;
     height: 150px;
 }
+/* Contact */
 
+.form-labels{
+    font-family: var(--account-txt);
+    font-weight: 300;
+    font-size: 1rem;
+}
 @media (min-width: 600px) {
     .login{
         width: 400px;
     }
-    .email-Verify{
+    .email-Verify, .contact-form, .contact-info{
         width: 600px;
     }
 }
