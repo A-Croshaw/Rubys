@@ -49,7 +49,7 @@
 <body class="login-background">
     {% include 'includes/header.html' %}
 
-    <main>
+   
         <div class="container-fluid col-10 d-block d-md-none rounded my-2 py-3 bg-fade">
                 <form method="GET" action="">
                     <div class="input-group">
@@ -64,9 +64,15 @@
                     </div>
                 </form>
         </div>
-        
-        {% block content %}
-        {% endblock %}
+    <main class="row m-1">
+        <div class="col-2 d-none d-md-block side-nav mt-3">
+            {% include 'includes/main-nav.html' %}
+        </div>
+        <div class="col-md-9 m-0 p-0">
+            {% block content %}
+            {% endblock %}
+        </div>
+  
     </main>
     {% include 'includes/footer.html' %}
 </body>

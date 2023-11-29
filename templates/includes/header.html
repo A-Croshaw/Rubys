@@ -68,9 +68,22 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
                 aria-controls="navbarOffcanvasLg">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button>            
             {% include 'includes/mobile-header.html' %}
-            {% include 'includes/main-nav.html' %}
+            <div class="offcanvas offcanvas-start w-25 my-0 py-0" tabindex="-1" id="navbarOffcanvasLg"
+                aria-labelledby="navbarOffcanvasLgLabel">
+                <div class="offcanvas-header">
+                    <h1 class="logo">Ruby's</h1>
+                    </h5>
+                </div>
+                <div class="offcanvas-body py-0 my-0 py-0 d-block d-md-none">
+                    <div class="">
+                        {% include 'includes/main-nav.html' %}
+                    </div>
+
+                </div>
+            </div>
+            
         </nav>
     </div>
 </header>

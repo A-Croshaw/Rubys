@@ -16,6 +16,7 @@
     --account-btn-txt: #000000;
     --login-txt: #000000;
     --bg-fade: #ffffffc2;
+    --side-nav: #ffffff;
 }
 
 body{
@@ -58,6 +59,10 @@ body{
     color: var(--banner-txt);
     font-family: var(--delivery);
     font-size: 1rem;
+}
+
+.side-nav{
+    background-color: var(--side-nav);
 }
 
 /* footer */
@@ -147,17 +152,32 @@ footer a:hover{
     font-weight: 300;
     font-size: 1rem;
 }
+
+.about-txt{
+    font-family: var(--account-txt);
+    font-size: 1.15rem;
+}
+
 @media (min-width: 600px) {
     .login{
         width: 400px;
     }
-    .email-Verify, .contact-form, .contact-info{
+    .email-Verify  {
         width: 600px;
     }
 }
 
 @media (min-width: 800px) {
-    .sign-up{
+    .sign-up, .contact-form, .contact-info, .about{
         width:600px;
+    }
+    .about{
+        width: 650px;
+    }
+}
+
+@media (min-width: 950px) {
+    .about{
+        width: 800px;
     }
 }

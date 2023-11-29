@@ -1,69 +1,127 @@
-<div class="offcanvas offcanvas-start w-25 my-0 py-0" tabindex="-1" id="navbarOffcanvasLg"
-    aria-labelledby="navbarOffcanvasLgLabel">
-    <div class="offcanvas-header">
-        <h1 class="logo">Ruby's</h1>
-        </h5>
-    </div>
-    <div class="offcanvas-body py-0 my-0 py-0">
-        <ul class="navbar-nav justify-content-evenly flex-grow-1 my-0 py-0">
-            <li class="nav-item d-block d-md-none my-0 py-0">
-                <a class="nav-link nav-txt my-0 py-0" href="{% url 'home' %}" id="home-link">
-                    Home
-                </a>
-            </li>
-            <li class="nav-item dropdown my-0 py-0">
-                <a class="nav-link nav-txt my-0 py-0" href="#" id="all-books-link" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    All Books
-                </a>
-                <div class="dropdown-menu" aria-labelledby="all-books-link">
-
-                </div>
-            </li>
-
-            <li class="nav-item dropdown my-0 py-0">
-                <a class=" nav-link nav-txt my-0 py-0" href="#" id="childrens-link" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Childrens
-                </a>
-                <div class="dropdown-menu" aria-labelledby="childrens-link">
-                </div>
-            </li>
-
-            <li class="nav-item dropdown my-0 py-0">
-                <a class=" nav-link nav-txt my-0 py-0" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Adult
-                </a>
-                <div class="dropdown-menu" aria-labelledby="adult-link">
-
-                </div>
-            </li>
-
-            <li class="nav-item my-0 py-0">
-                <a class="nav-link nav-txt my-0 py-0" href="{% url 'about' %}" id="about-link">
-                    About Us
-                </a>
-            </li>
-            <li class="nav-item my-0 py-0">
-                <a class="nav-link nav-txt my-0 py-0" href="{% url 'contact' %}" id="about-link">
-                    Contact Us
-                </a>
-            </li>
-            <li class="nav-item dropdown d-block d-md-none my-0 py-0">
-                <a class="nav-link nav-txt my-0 py-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    My Account
-                </a>
-                <ul class="dropdown-menu border-0 my-0 py-0">
-                    {% if request.user.is_authenticated %}
-                    <li><a href="" class="dropdown-item">My Profile</a></li>
-                    <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
-                    {% else %}
-                    <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                    {% endif %}
-                </ul>
-            </li>
+<ul class="navbar-nav sticky-left p-2">
+    <li class="nav-item d-block d-md-none">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="{% url 'home' %}" id="home-link">
+            Home
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="all-books-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            All Books
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="all-books-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Childrens Books
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="all-books-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Teen Books
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="all-books-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Adult Books
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="all-books-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Cook Books
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="childrens-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Biographys
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Technology
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            health
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Business
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Home & Garden
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Science
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            History
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Music
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Sport
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Poetry
+        </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class=" nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" id="adult-link" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Other
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="{% url 'about' %}" id="about-link">
+            About Us
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="{% url 'contact' %}" id="about-link">
+            Contact Us
+        </a>
+    </li>
+    <li class="nav-item dropdown d-block d-md-none">
+        <a class="nav-link nav-txt my-0 ms-md-2 p-0 py-md-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            My Account
+        </a>
+        <ul class="dropdown-menu border-0">
+            {% if request.user.is_authenticated %}
+            <li><a href="" class="dropdown-item">My Profile</a></li>
+            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+            <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+            {% endif %}
         </ul>
-    </div>
-</div>
+    </li>
+</ul>
