@@ -61,9 +61,6 @@ body{
     font-size: 1rem;
 }
 
-.side-nav{
-    background-color: var(--side-nav);
-}
 
 /* footer */
 
@@ -168,16 +165,10 @@ footer a:hover{
 }
 
 @media (min-width: 800px) {
-    .sign-up, .contact-form, .contact-info, .about{
+    .sign-up, .contact-info, .about{
         width:600px;
-    }
-    .about{
-        width: 650px;
     }
 }
 
 @media (min-width: 950px) {
-    .about{
-        width: 800px;
-    }
 }
