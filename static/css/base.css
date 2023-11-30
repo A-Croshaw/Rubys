@@ -32,6 +32,10 @@ body{
     font-weight: 600;
 }
 
+.nav-top{
+    position:relative;
+}
+
 .nav-bg{
     background-color: var(--nav-bar);
 }
@@ -60,7 +64,6 @@ body{
     font-family: var(--delivery);
     font-size: 1rem;
 }
-
 
 /* footer */
 
@@ -134,15 +137,35 @@ footer a:hover{
 .headers{
     font-family: var(--logo), sans-serif, Arial;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
-.card{
-    min-width: 150px;
-    max-width: 150px;
-    height: 150px;
+.card-img{
+    height: 18rem;
 }
-/* Contact */
+
+.card-title{
+    height: 5rem;
+    text-align: center;
+    font-family: var(--account-txt);
+    font-size: 1.1rem;
+}
+.card-details{
+    height: 8rem;
+    font-family: var(--account-txt);
+}
+
+.card-details,
+.card-title,
+.card-img{
+    width: 12.5rem;
+}
+.rating{
+    color: darkorange;
+    padding-right: 5px;
+}
+
+/* Contact/About */
 
 .form-labels{
     font-family: var(--account-txt);
@@ -164,11 +187,24 @@ footer a:hover{
     }
 }
 
-@media (min-width: 800px) {
-    .sign-up, .contact-info, .about{
+@media (min-width: 767px) {
+    .side-nav{
+        width: 10rem;
+        padding: 1rem;
+        margin-top: 1rem;
+        position:fixed;
+        
+    }
+    .main-content{
+        margin-right: 10px;
+    }
+    .sign-up{
         width:600px;
     }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 970px) {
+    .main-content{
+        margin-right: auto;
+    }
 }

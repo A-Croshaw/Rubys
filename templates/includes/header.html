@@ -1,5 +1,5 @@
 {% load static %}
-<header class="container-fluid sticky-top">
+<header class="container-fluid nav-top">
     <div id="topnav" class="row d-none d-md-flex nav-bg ">
         <div class="col-12 col-md-4 py-2">
             <a href="{% url 'home' %}" class="nav-link p-0 nav-txt">
@@ -70,20 +70,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>            
             {% include 'includes/mobile-header.html' %}
-            <div class="offcanvas offcanvas-start w-50 w-md-25 my-0 py-0" tabindex="-1" id="navbarOffcanvasLg"
-                aria-labelledby="navbarOffcanvasLgLabel">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
                 <div class="offcanvas-header">
                     <h1 class="logo">Ruby's</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body py-0 my-0 py-0 d-block d-md-none">
-                    <div class="">
-                        {% include 'includes/main-nav.html' %}
-                    </div>
-
+                    {% include 'includes/main-nav.html' %}
                 </div>
             </div>
-            
         </nav>
     </div>
 </header>
