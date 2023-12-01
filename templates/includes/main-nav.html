@@ -10,102 +10,95 @@
         </a>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}" id="all-books-link"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             All Books
         </a>
+        <ul class="dropdown-menu nav-bg">
+            <li><a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
+            <li><a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a></li>
+            <li><a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a></li>
+            <li><a href="{% url 'products' %}" class="dropdown-item">All Books</a></li>
+        </ul>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="all-books-link" data-toggle="dropdown"
+    <li class="nav-item">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=children" id="all-books-link"
             aria-haspopup="true" aria-expanded="false">
             Childrens Books
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="all-books-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=teen">
             Teen Books
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="all-books-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=adult">
             Adult Books
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="all-books-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=cooking">
             Cook Books
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="childrens-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=biographies">
             Biographies
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=technology">
             Technology
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            health
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=health">
+            Health
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=business">
             Business
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=home_garden">
             Home & Garden
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=science">
             Science
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=history">
             History
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=music">
             Music
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=sports">
             Sport
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="#" id="adult-link" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item">
+        <a class=" nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'products' %}?category=poetry">
             Poetry
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'about' %}" id="about-link">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'about' %}">
             About Us
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'contact' %}" id="about-link">
+        <a class="nav-link nav-txt my-0 ms-md-0 p-0 " href="{% url 'contact' %}">
             Contact Us
         </a>
     </li>

@@ -140,6 +140,11 @@ footer a:hover{
 }
 /* Generic */
 
+a.category > span.badge:hover {
+    background: var(--nav-bar);
+}
+
+
 .headers{
     font-family: var(--logo), sans-serif, Arial;
     font-weight: 600;
@@ -191,6 +196,7 @@ footer a:hover{
 .view-txt{
     font-size: 1.1rem;
     text-align: left;
+    color: var(--login-txt);
 }
 
 /* Contact/About */
@@ -217,7 +223,7 @@ footer a:hover{
 
 @media (min-width: 767px) {
     .side-nav{
-        width: 10rem;
+        width: 11rem;
         padding: 1rem;
         margin-top: 1rem;
         position:fixed;

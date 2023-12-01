@@ -5,12 +5,40 @@
 {% block content %}
 <section class="container offset-md-1 text-center">
     <div class="container m-0 p-0 bg-fade pb-2">
-        <h1 class="text-center m-2 p-2 headers">
-            All Products
-        </h1>
-        <div class="container d-flex flex-row flex-wrap justify-content-center ">
+        <div class="row">
+            <div class="col text-center mt-3">                
+                <hr class="mb-1">
+                <h2 class="view-headers mb-1">{% for c in current_categories %}{{ c.friendly_name }}{% endfor %} Books</h2>
+                <hr class="mb-1">
+            </div>
+        </div>
+        <div class="row my-1 py-1">
+            <div class="col-12 col-sm-6 d-flex justify-content-center mt-1 mb-0 pb-0 pt-1">
+                <p class="view-txt pt-1 text-center">
+                    {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 d-flex justify-content-center mt-1 mb-0 pb-0 pt-1">
+                <div class="sort-select-wrapper w-50 text-center pt-2">
+                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                        <option value="title_asc" {% if current_sorting == 'title_asc' %}selected{% endif %}>Title (A-Z)</option>
+                        <option value="title_desc" {% if current_sorting == 'title_desc' %}selected{% endif %}>Title (Z-A)</option>
+                        <option value="author_asc" {% if current_sorting == 'author_asc' %}selected{% endif %}>Author (A-Z)</option>
+                        <option value="author_desc" {% if current_sorting == 'author_desc' %}selected{% endif %}>Author (Z-A)</option>
+                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <hr class="mb-1">
+        <div class="container d-flex flex-row flex-wrap justify-content-center">
             {% for product in products %} 
-            <a href="" class="card-link " aria-label="Click to view {{product.title}}">
                 <div class="card-md mt-3 p-md-2">
                     <div class="card-body nav-bg p-3">
                         {% if product.image %}
@@ -32,7 +60,7 @@
                                     {% if product.category %}
                                     <p class="small my-2">
                                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                            {{ product.category.friendly_name }}
                                         </a>
                                     </p>
                                     {% endif %}
@@ -52,9 +80,36 @@
                         </div>
                     </div>
                 </div>
-            </a>
             {% endfor %}
         </div>
     </div>
 </section>
+{% endblock %}
+
+
+{% block postloadjs %}
+    {{ block.super }}
+   
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
