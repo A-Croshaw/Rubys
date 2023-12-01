@@ -12,30 +12,8 @@
                 <hr class="mb-1">
             </div>
         </div>
-        <div class="row my-1 py-1">
-            <div class="col-12 col-sm-6 d-flex justify-content-center mt-1 mb-0 pb-0 pt-1">
-                <p class="view-txt pt-1 text-center">
-                    {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                </p>
-            </div>
-            <div class="col-12 col-sm-6 d-flex justify-content-center mt-1 mb-0 pb-0 pt-1">
-                <div class="sort-select-wrapper w-50 text-center pt-2">
-                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                        <option value="title_asc" {% if current_sorting == 'title_asc' %}selected{% endif %}>Title (A-Z)</option>
-                        <option value="title_desc" {% if current_sorting == 'title_desc' %}selected{% endif %}>Title (Z-A)</option>
-                        <option value="author_asc" {% if current_sorting == 'author_asc' %}selected{% endif %}>Author (A-Z)</option>
-                        <option value="author_desc" {% if current_sorting == 'author_desc' %}selected{% endif %}>Author (Z-A)</option>
-                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+        <div class="">
+            {%include 'includes/sort.html'%}
         <hr class="mb-1">
         <div class="container d-flex flex-row flex-wrap justify-content-center">
             {% for product in products %} 
@@ -47,13 +25,13 @@
                         </a>
                         {% else %}
                         <a href="{% url 'product_view' product.id %}">
-                            <img class="card-img" src="" alt="{{ product.title }}">
+                            <img class="card-img mb-4 pb-3" src="" alt="{{ product.title }}">
                         </a>
                         {% endif %}
-                        <div class="card-body card-title bg-white pt-3">
-                            <p class="mb-0">{{ product.title }}</p>
+                        <div class="card-body card-title bg-white pb-2  ">
+                            <p class="mb-0 mb-1 pt-2 p-1">{{ product.title }}</p>
                         </div>
-                        <div class="card-footer bg-white card-details pt-4">
+                        <div class="card-footer bg-white card-details pt-2">
                             <div class="row">
                                 <div class="col">
                                     <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
@@ -86,30 +64,35 @@
 </section>
 {% endblock %}
 
-
 {% block postloadjs %}
     {{ block.super }}
-   
+
     <script type="text/javascript">
-        $('#sort-selector').change(function() {
+        document.getElementById("price-up").addEventListener("click", ordering);
+        document.getElementById("price-down").addEventListener("click", ordering);
+        document.getElementById("rating-up").addEventListener("click", ordering);
+        document.getElementById("rating-down").addEventListener("click", ordering);
+        document.getElementById("title-up").addEventListener("click", ordering);
+        document.getElementById("title-down").addEventListener("click", ordering);
+        document.getElementById("author-up").addEventListener("click", ordering);
+        document.getElementById("author-down").addEventListener("click", ordering);
+        document.getElementById("category-up").addEventListener("click", ordering);
+        document.getElementById("category-down").addEventListener("click", ordering);
+
+        function ordering(){
             var selector = $(this);
             var currentUrl = new URL(window.location);
-
             var selectedVal = selector.val();
             if(selectedVal != "reset"){
                 var sort = selectedVal.split("_")[0];
                 var direction = selectedVal.split("_")[1];
-
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
-
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
-
-                window.location.replace(currentUrl);
-            }
-        })
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+            window.location.replace(currentUrl);
+        }};
     </script>
 {% endblock %}
