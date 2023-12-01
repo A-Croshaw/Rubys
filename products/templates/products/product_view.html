@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="container offset-md-1 text-center">
+    <div class="container-fluid">
+        <div class="card mb-3 mt-5 p-3 nav-bg" style="max-width: 1300px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    {% if product.image %}
+                    <a href="{{ product.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.title }}">
+                    </a>
+                    {% else %}
+                    <a href="{{ product.image.url }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="col-md-8 bg-white">
+                    <div class="card-body">
+                        <h2 class="view-headers">{{ product.title }}</h2>
+                        <h3 class="view-header-2">By {{ product.author }}</h3>
+                        
+                        <div class="accordion accordion-flush" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Book Details
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="view-txt">First Published: {{ product.first_published }}</p>
+                                            <p class="view-txt">This version was Published:{{ product.this_edition }}</p>
+                                            <p class="view-txt">Language: {{ product.language }}</p>
+                                            <p class="view-txt">Number of Pages: {{ product.pages }}</p>
+                                            {% if product.rating %}
+                                            <p class="view-txt text-left"><i class="fas fa-star mr-1 rating"></i>Rating {{ product.rating }} / 5</p>
+                                            {% else %}
+                                                <p class="view-txt">No Rating</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col ">
+                                            <p class="view-txt">Category: {{ product.category}}</p>
+                                            <p class="view-txt">SKU: {{ product.sku }}</p>
+                                            <p class="view-txt">ISBN-13: {{ product.ISBN }}</p>
+                                            <p class="view-txt">Condition: {{ product.condition }}</p>
+                                            <p class="view-txt"><strong>Price: €{{ product.price }}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Description
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p class="view-txt">{{ product.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+
+                </div>
+                <p class="view-txt mx-4 px-2">Click here to see what other people think on 
+                    <a href="{{ product.link }}">
+                        <strong class="view-txt">Goodreads</strong>.
+                    </a>
+                </p>
+            </div>
+            {% if request.user.is_superuser %}
+            <div class="bg-white">
+                <small>
+                    <a href="">Edit</a> | 
+                    <a class="text-danger" href="">Delete</a>
+                </small>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

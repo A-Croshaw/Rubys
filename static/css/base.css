@@ -17,18 +17,20 @@
     --login-txt: #000000;
     --bg-fade: #ffffffc2;
     --side-nav: #ffffff;
+    --bg-color: #aaaaaa;
 }
 
 body{
     background: url(../images/background-image.webp) no-repeat center;
     background-attachment:fixed;
+    background-color: var(--bg-color);
 }
 
 /* header */
 
 .logo {
     font-family: var(--logo);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -65,6 +67,10 @@ body{
     font-size: 1rem;
 }
 
+.delivery-text{
+    font-size: 1.5rem;
+
+}
 /* footer */
 
 footer{
@@ -165,6 +171,28 @@ footer a:hover{
     padding-right: 5px;
 }
 
+/* Single View */
+
+.view-headers, .view-txt{
+    font-family: var(--account-txt), sans-serif, Arial;
+}
+
+
+.view-headers{
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.view-header-2{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.view-txt{
+    font-size: 1.1rem;
+    text-align: left;
+}
+
 /* Contact/About */
 
 .form-labels{
@@ -198,6 +226,7 @@ footer a:hover{
     .main-content{
         margin-right: 10px;
     }
+    
     .sign-up{
         width:600px;
     }
