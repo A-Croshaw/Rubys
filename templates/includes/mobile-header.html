@@ -6,11 +6,15 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="nav-link d-block d-md-none pe-2" href="">
+    <a class="nav-link d-block d-md-none pe-2" href="{% url 'shopping_bag' %}">
         <div class="text-center nav-txt">
             <div><i class="fas fa-shopping-bag fa-md"></i></div>
             <p class="my-0">
-                $0.00
+            {% if overal_total %}
+                €{{ overal_total|floatformat:2 }}
+            {% else %}
+                €0.00
+            {% endif %}
             </p>
         </div>
     </a>

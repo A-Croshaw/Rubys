@@ -139,6 +139,9 @@ footer a:hover{
     text-decoration: none;
 }
 /* Generic */
+.line{
+    color: var(--login-txt);
+}
 
 a.category > span.badge:hover {
     background: var(--nav-bar);
@@ -203,6 +206,7 @@ a.category > span.badge:hover {
     border: none;
     text-decoration: none;
 }
+
 
 .sort-btn{
     color: var(--login-txt);
