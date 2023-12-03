@@ -27,7 +27,7 @@
                                     <h6 class="toast-header-2">By {{ item.product.author }}</h6>
                                     <p class="toast-txt"><strong>Price: €{{ item.product.price }}</strong></p>
                                     <p class="toast-txt"><strong>Qty: {{ item.quantity }}</strong></p>
-                                    <p class="toast-txt"><strong>Sub Total: €{{ item.product.price }}</strong></p>
+                                    <p class="toast-txt"><strong>Sub Total: €{{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
                                 </div>
                             </div>
                         </div>

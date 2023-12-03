@@ -223,11 +223,18 @@ a.category > span.badge:hover {
 }
 
 .cart-txt{
-    text-align: left;
-    text-align: center;
+    text-align:center;
+}
+
+.thank-you-box{
+    max-width: 600px;
 }
 .thank-you-txt{
     font-size: 1rem;
+    text-align:center;
+}
+.thank-you-order{
+    font-size: 1.2rem;
 }
 .cart-txt-price{
     text-align: center;

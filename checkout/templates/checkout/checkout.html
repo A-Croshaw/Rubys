@@ -6,6 +6,7 @@
 {% endblock %}
 {% block content %}
 <section class="container offset-md-1 text-center bg-fade">
+    <div class="overlay"></div>
     <div class="container-fluid pb-3">
         <div class="row d-flex justify-content-center">
             <div class="col">
@@ -59,7 +60,7 @@
                                                         <div class="col-12 col-md-6 pt-3">
                                                             <p class="toast-txt mt-2"><strong>Price: €{{ item.product.price }}</strong></p>
                                                             <p class="toast-txt mt-2"><strong>Qty: {{ item.quantity }}</strong></p>
-                                                            <p class="toast-txt mt-2"><strong>Sub Total: €{{ item.product.price }}</strong></p>
+                                                            <p class="toast-txt mt-2"><strong>Sub Total: €{{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -77,9 +78,9 @@
                                 </div>
                                 {% endfor %}
                             </div>
-                            <div class="  col-12 col-md-4 d-flex justify-content-end p-0 m-0">
-                                <div class="container row align-content-end p-0 m-0">
-                                    <div class=" box-shadow row p-2 m-0">
+                            <div class="  col-12 col-md-4 d-flex justify-content-end mb-2">
+                                <div class="container row align-content-end">
+                                    <div class=" box-shadow row p-2">
                                         <div class="col-7 p-0 m-0">
                                             <p class="checkout-txt my-0">Order Total:</p>
                                             <p class="checkout-txt my-0">Delivery:</p>
@@ -92,6 +93,14 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="submit-button text-right mt-5 mb-2">
+                                <a href="{% url 'shopping_cart' %}" class="btn btn-outline-black rounded-0">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="font-weight-bold">Adjust Bag</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -180,8 +189,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
     <div id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">
