@@ -5,49 +5,49 @@ from products.models import Product
 
 def shopping_content(request):
 
-    items_in_bag = []
+    items_in_cart = []
     total = 0
-    product_count = 0
-    bag = request.session.get('bag', {})
+    item_count = 0
+    cart = request.session.get('cart', {})
+    delivery = 0
+    
 
-    for item_id, item_data in bag.items():
-        if isinstance(item_data, int):
-            product = get_object_or_404(Product, pk=item_id)
-            total += item_data * product.price
-            product_count += item_data
-            items_in_bag.append({
+    for item_id, quantity in cart.items():
+        product = get_object_or_404(Product, pk=item_id)
+
+        if product.condtion == "used":
+            price_used = product.price / 2
+
+            total += quantity * price_used
+            item_count += quantity
+            items_in_cart.append({
                 'item_id': item_id,
-                'quantity': item_data,
+                'quantity': quantity,
                 'product': product,
             })
         else:
-            product = get_object_or_404(Product, pk=item_id)
-            for size, quantity in item_data['items_by_size'].items():
-                total += quantity * product.price
-                product_count += quantity
-                items_in_bag.append({
-                    'item_id': item_id,
-                    'quantity': quantity,
-                    'product': product,
+            total += quantity * product.price
+            item_count += quantity
+            items_in_cart.append({
+                'item_id': item_id,
+                'quantity': quantity,
+                'product': product,
+            })
         
-                })
-    if total > 0:
-        if total < settings.FREE_DELIVERY:
-        
-            delivery = total + Decimal(settings.STANDARD_DELIVERY)
-            free_delivery_difference = settings.FREE_DELIVERY - total
-            
-        else:
-            delivery = 0
-            free_delivery_difference= 0
-
+    if total >0:
+         delivery = settings.STANDARD_DELIVERY
+    if total < settings.FREE_DELIVERY:
+        free_delivery_difference = settings.FREE_DELIVERY - total
+    else:
+        delivery = 0
+        free_delivery_difference = 0
     
     overal_total = delivery + total
     
     context = {
-        'items_in_bag': items_in_bag,
+        'items_in_cart': items_in_cart,
         'total': total,
-        'product_count': product_count,
+        'item_count': item_count,
         'delivery': delivery,
         'free_delivery_difference': free_delivery_difference,
         'free_delivery': settings.FREE_DELIVERY,

@@ -18,6 +18,8 @@
     --bg-fade: #ffffffc2;
     --side-nav: #ffffff;
     --bg-color: #aaaaaa;
+    --toast-txt: #000;
+    --toast-bg: rgba(211, 227, 252, 0.842);
 }
 
 body{
@@ -138,6 +140,22 @@ footer a:hover{
     background-color: #8f8888;
     text-decoration: none;
 }
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.qty_input{
+    width: 125px;
+}
+
+input[name='quantity']:hover {
+    box-shadow: 0px 5px 5px 0px rgba(255, 0, 0, 0.4);
+    border: 2px solid rgba(255, 0, 0, 0.4);
+}
+
 /* Generic */
 .line{
     color: var(--login-txt);
@@ -156,6 +174,7 @@ a.category > span.badge:hover {
 
 .card-img{
     height: 18rem;
+    width: 14rem;
 }
 
 .card-title{
@@ -179,13 +198,53 @@ a.category > span.badge:hover {
     padding-right: 5px;
 }
 
+/* ------------------------------- bootstrap toasts */
+
 /* Single View */
 
-.view-headers, .view-txt{
+.view-headers,
+.view-txt,
+.view-header-2,
+.cart-txt,
+.cart-headers,
+.cart-header-2,
+.cart-txt-price,
+.cart-totals,
+.cart-grand-total,
+.cart-header{
     font-family: var(--account-txt), sans-serif, Arial;
 }
 
+.cart-header{
+    font-size: 2rem;
+}
 
+.cart-txt{
+    text-align: left;
+}
+
+.cart-txt-price{
+    text-align: center;
+}
+
+.cart-headers{
+    font-size: 1.5rem;
+}
+.cart-header-2{
+ font-size: 1.1rem;
+}
+.cart-totals{
+    font-size: 1.5rem;
+}
+
+.cart-grand-total{
+    font-size: 1.75rem;
+}
+
+.box-shadow{
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px 3px rgba(255, 0, 0, 0.4);
+}
 .view-headers{
     font-weight: 400;
     font-size: 3rem;
@@ -202,7 +261,7 @@ a.category > span.badge:hover {
     color: var(--login-txt);
 }
 
-.sort-btn-arrow{
+.sort-btn-arrow, .btn-cart{
     border: none;
     text-decoration: none;
 }
@@ -250,6 +309,71 @@ a.category > span.badge:hover {
     background-color: var(--nav-hover);
 }
 
+.btn-cart:hover{
+    background-color: var(--nav-hover);
+}
+
+/* toast view */
+
+.toast-img{
+    max-height: 6rem;
+}
+
+
+.message-container {
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    z-index: 99999999999;
+    max-width: 280px;
+}
+
+.toast-item-list{
+    max-height: 350px;
+}
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.toast-header{
+    font-size: 1.2rem;
+    padding: 0px;
+    margin: 0;
+}
+
+.toast-header-2{
+    font-size: 1rem;
+    padding: 2px;
+    margin: 0;
+}
+.toast-header,
+.toast-header-2,
+.toast-txt,
+.toast-top-txt{   
+    font-family: var(--account-txt), sans-serif, Arial;
+    color: var(--toast-txt);
+}
+.toast-bg{
+    background-color: var(--toast-bg);
+}
+
+.toast-txt{
+    font-size: .9rem;
+    padding: 0;
+    margin: 0;
+}
+
+.toast-top-txt{
+    font-size: 1.2rem;
+}
+
+.toast-top-success{
+    color: #ff0000;
+}
 /* Contact/About */
 
 .form-labels{

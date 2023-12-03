@@ -38,29 +38,39 @@
             emailjs.init("{{EMAILJS}}");
         })();
     </script>
-    <script src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
     <!-- Stripe -->
     {% endblock %}
-
     <title>Ruby's {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body class="login-background">
     {% include 'includes/header.html' %}
-        <div class="container col-10 d-block d-md-none rounded my-2 py-3 bg-fade">
-                <form method="GET" action="">
-                    <div class="input-group">
-                        <input class="form-control rounded " type="text" name="q" placeholder="Search Books">
-                        <div>
-                            <button class="form-control btn nav-txt" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+    <div class="container row d-flex float-right">
+        <div class="col">
+            {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                {% include 'includes/toasts/toast.html' %}
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
+    </div>
+    <div class="container col-10 d-block d-md-none rounded my-2 py-3 bg-fade">
+        <form method="GET" action="">
+            <div class="input-group">
+                <input class="form-control rounded " type="text" name="q" placeholder="Search Books">
+                <div>
+                    <button class="form-control btn nav-txt" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
     <main class="row m-1 mb-5">
         <div class="col-2 d-none d-md-block side-nav nav-bg ">
             {% include 'includes/main-nav.html' %}
@@ -69,10 +79,14 @@
             {% block content %}
             {% endblock %}
         </div>
-  
     </main>
+
     {% include 'includes/footer.html' %}
+
     {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
 </body>
 
