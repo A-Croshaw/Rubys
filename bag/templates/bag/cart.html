@@ -4,7 +4,7 @@
 
 {% block content %}
 <section class="container offset-md-1 text-center bg-fade">
-    <div class="container-fluid">
+    <div class="container-fluid pb-3">
         <div class="row d-flex justify-content-center">
             <div class="col">
                 <hr>
@@ -30,7 +30,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-lg-8 order-last order-lg-first">
                 {% for item in items_in_cart %}
-                <div class="card mb-1 mt-1 p-1 box-shadow" style="max-height: 1300px;">
+                <div class="card mb-1 mt-1 p-1 mb-3 box-shadow" style="max-height: 1300px;">
                     <div class="row g-0 bg-white">
                         <div class="col-md-3 ms-md-3 pt-3">
                             {% if item.product.image %}
@@ -52,7 +52,7 @@
                                 </div>
                                 <hr>
                                 <div class="row container">
-                                    <div class="d-flex col-12 justify-content-center">
+                                    <div class="d-flex col-12 justify-content-evenly">
                                         <form class="form update-form" method="POST" id="qty-update"
                                             action="{% url 'cart_update' item.item_id %}">
                                             {% csrf_token %}
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="accordion accordion-flush mt-3" id="accordionExample">
+                                <div class="accordion accordion-flush box-shadow mt-3" id="accordionExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button accordion-btn" type="button"
@@ -118,8 +118,8 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class=" col-12 col-lg-4 order-first order-lg-last">
-                <div class="row pt-2 mt-lg-2 box-shadow ms-lg-1">
+            <div class=" col-12 col-lg-4 order-first p-3 order-lg-last">
+                <div class="row p-2 mt-lg-2 box-shadow ms-lg-1">
 
                     <h3 class="cart-totals pt-4">Number of items in Cart :  {{ item_count }}</h3>
                     <h3 class="cart-totals pt-4"><strong>Cart Total : €{{ total|floatformat:2 }}</strong></h3>
@@ -131,7 +131,7 @@
                     {% endif %}
                     <h4 class="cart-grand-total mt-4"><strong>Final Price Total: €{{ overal_total|floatformat:2 }}</strong></h4>
 
-                    <a href="" class="btn btn-account pt-3">
+                    <a href="{% url 'checkout' %}" class="btn btn-account ">
                         <span class="text-uppercase">Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>

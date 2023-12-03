@@ -1,12 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
+
 
 {% block content %}
 <section class="container offset-md-1 text-center">
@@ -68,7 +62,7 @@
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </form>
-                        <div class="accordion accordion-flush mt-3" id="accordionExample">
+                        <div class="accordion accordion-flush box-shadow mt-3" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button nav-txt" type="button" data-bs-toggle="collapse"

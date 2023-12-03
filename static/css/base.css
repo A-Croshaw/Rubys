@@ -19,7 +19,7 @@
     --side-nav: #ffffff;
     --bg-color: #aaaaaa;
     --toast-txt: #000;
-    --toast-bg: rgba(211, 227, 252, 0.842);
+    --toast-bg: rgba(211, 227, 252, 0.966)
 }
 
 body{
@@ -211,8 +211,11 @@ a.category > span.badge:hover {
 .cart-txt-price,
 .cart-totals,
 .cart-grand-total,
-.cart-header{
+.cart-header,
+.checkout-txt,
+.thank-you-txt{
     font-family: var(--account-txt), sans-serif, Arial;
+    color: #000;
 }
 
 .cart-header{
@@ -221,8 +224,11 @@ a.category > span.badge:hover {
 
 .cart-txt{
     text-align: left;
+    text-align: center;
 }
-
+.thank-you-txt{
+    font-size: 1rem;
+}
 .cart-txt-price{
     text-align: center;
 }
@@ -241,6 +247,16 @@ a.category > span.badge:hover {
     font-size: 1.75rem;
 }
 
+
+.checkout-img{
+    height: 140px;
+    width: 100px;
+}
+
+.checkout-txt{
+    font-size: 1rem;
+    text-align: left;
+}
 .box-shadow{
     border-radius: 6px;
     box-shadow: 3px 3px 3px 3px rgba(255, 0, 0, 0.4);
