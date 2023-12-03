@@ -10,7 +10,6 @@ def shopping_cart(request):
 
 def cart_add(request, item_id):
     """ Adding products to shopping cart with quantities"""
-
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -18,13 +17,16 @@ def cart_add(request, item_id):
 
     if item_id in list(cart.keys()):
          cart[item_id] += quantity
+         price_sub = product.price * quantity
          messages.success(request, f'Added {product.title} to {cart[item_id]}')
     else:
          cart[item_id] = quantity
+         price_sub = product.price * quantity
          messages.success(request, f'Added {product.title} to {cart[item_id]}')
     
     request.session['cart'] = cart
-    return redirect(redirect_url)
+
+    return redirect(redirect_url,)
 
 
 def cart_update(request, item_id):

@@ -11,15 +11,13 @@ def shopping_content(request):
     cart = request.session.get('cart', {})
     delivery = 0
     
-
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
-
         if product.condtion == "used":
             price_used = product.price / 2
-
             total += quantity * price_used
             item_count += quantity
+
             items_in_cart.append({
                 'item_id': item_id,
                 'quantity': quantity,
