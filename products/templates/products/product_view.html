@@ -16,7 +16,7 @@
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.title }}">
                     </a>
                     {% else %}
-                    <a href="{{ product.image.url }}">
+                    <a href="">
                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
                     </a>
                     {% endif %}
@@ -125,8 +125,8 @@
                 {% if request.user.is_superuser %}
                 <div class="bg-white">
                     <small>
-                        <a href="">Edit</a> |
-                        <a class="text-danger" href="">Delete</a>
+                        <a href="{% url 'product_edit' product.id %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'product_delete' product.id %}">Delete</a>
                     </small>
                 </div>
                 {% endif %}

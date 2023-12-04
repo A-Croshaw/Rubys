@@ -31,6 +31,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="{% url 'product_add' %}" class="dropdown-item">Product Management</a>
+                        {% endif %}
                         <li><a href="{% url 'profile' %}" class="dropdown-item nav-txt">My Profile</a></li>
                         <li><a href="{% url 'account_logout' %}" class="dropdown-item nav-txt">Logout</a></li>
                         {% else %}

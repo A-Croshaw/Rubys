@@ -25,8 +25,8 @@
                         <img class="card-img" src="{{ product.image.url }}" alt="{{ product.title }}">
                     </a>
                     {% else %}
-                    <a href="{% url 'product_view' product.id %}">
-                        <img class="card-img mb-4 pb-3" src="" alt="{{ product.title }}">
+                    <a href="">
+                        <img class="card-img mb-4 pb-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.title }}">
                     </a>
                     {% endif %}
                     <div class="card-body card-title bg-white pb-2  ">
@@ -52,8 +52,8 @@
                                 {% endif %}
                                 {% if request.user.is_superuser %}
                                 <small class="ml-3 ms-3 ps-4">
-                                    <a href="">Edit</a> |
-                                    <a class="text-danger" href="">Delete</a>
+                                    <a href="{% url 'product_edit' product.id %}">Edit</a> |
+                                    <a class="text-danger" href="{% url 'product_delete' product.id %}">Delete</a>
                                 </small>
                                 {% endif %}
                             </div>
