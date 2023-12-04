@@ -34,7 +34,7 @@ DEBUG = development
 if development:
     ALLOWED_HOSTS = ['localhost','127.0.0.1']
 else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+    ALLOWED_HOSTS = ['https://rubysbooksonline-7c229ec277f8.herokuapp.com/']
 
 
 
