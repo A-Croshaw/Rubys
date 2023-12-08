@@ -1,0 +1,198 @@
+/* Account Logins */
+
+
+.account-login{
+    font-family: var(--logo);
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.login, .sign-up{
+    background-color: var(--login-bg);
+}
+
+.login-txt, .login{
+    font-size: 1.2rem;
+}
+
+.sign-up{
+    font-size: 1rem;
+}
+
+.login-txt, .login, .sign-up{
+    font-family: var(--account-txt);
+    color: var(--login-txt);
+    
+}
+
+.btn-account, .btn-sign-up:hover{
+    border: #ff0000 ridge 3px ;
+    font-family: var(--account-txt);
+    font-weight: 600;
+    font-size: 1.15rem;
+    background-color: #8f8888;
+    color: var(--account-btn-txt);
+
+}
+
+.btn-sign-up, .btn-account:hover{
+    border: #001aff ridge 3px ;
+    font-family: var(--account-txt);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--account-btn-txt);
+    background-color: #8f8888;
+    text-decoration: none;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
+
+/* ------------------------------- bootstrap toasts */
+
+/* Single View */
+
+.cart-txt,
+.cart-headers,
+.cart-header-2,
+.cart-txt-price,
+.cart-totals,
+.cart-grand-total,
+.cart-header,
+.checkout-txt,
+.thank-you-txt{
+    font-family: var(--account-txt), sans-serif, Arial;
+    color: #000;
+}
+
+.cart-header{
+    font-size: 2rem;
+}
+
+.cart-txt{
+    text-align:center;
+}
+
+.thank-you-box{
+    max-width: 600px;
+}
+.thank-you-txt{
+    font-size: 1rem;
+    text-align:center;
+}
+.thank-you-order{
+    font-size: 1.2rem;
+}
+.cart-txt-price{
+    text-align: center;
+}
+
+.cart-headers{
+    font-size: 1.5rem;
+}
+.cart-header-2{
+ font-size: 1.1rem;
+}
+.cart-totals{
+    font-size: 1.5rem;
+}
+
+.cart-grand-total{
+    font-size: 1.75rem;
+}
+
+
+.checkout-img{
+    height: 140px;
+    width: 100px;
+}
+
+.checkout-txt{
+    font-size: 1rem;
+    text-align: left;
+}
+
+
+
+
+
+/* toast view */
+
+.toast-img{
+    max-height: 6rem;
+}
+
+
+.message-container {
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    z-index: 99999999999;
+    max-width: 280px;
+}
+
+.toast-item-list{
+    max-height: 350px;
+}
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.toast-header{
+    font-size: 1.2rem;
+    padding: 0px;
+    margin: 0;
+}
+
+.toast-header-2{
+    font-size: 1rem;
+    padding: 2px;
+    margin: 0;
+}
+.toast-header,
+.toast-header-2,
+.toast-txt,
+.toast-top-txt{   
+    font-family: var(--account-txt), sans-serif, Arial;
+    color: var(--toast-txt);
+}
+.toast-bg{
+    background-color: var(--toast-bg);
+}
+
+.toast-txt{
+    font-size: .9rem;
+    padding: 0;
+    margin: 0;
+}
+
+.toast-top-txt{
+    font-size: 1.2rem;
+}
+
+.toast-top-success{
+    color: #ff0000;
+}
+/* Contact/About */
+
+.form-labels{
+    font-family: var(--account-txt);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.about-txt{
+    font-family: var(--account-txt);
+    font-size: 1.15rem;
+}
+
+
